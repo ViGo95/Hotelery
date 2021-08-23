@@ -1,0 +1,66 @@
+/* VARIABLES GLOBALES */
+
+:root {
+	--color-oceania: #656DE2;
+	--color-light: #E5E5E5;
+	--color-dark: #3D3D3D;
+	--color-gray: #7B7B7B;
+	--color-star: #F39C12;
+}
+
+/* STILOS GLOBALES */
+
+body {
+	background-color: var(--color-light);
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	color: var(--color-dark);
+}
+
+h1 {
+	font-size: 2em;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+}
+
+.title {
+	font-size: 20px;
+}
+
+.subtitle {
+	font-size: 16px;
+}
+
+.btn-main {
+	background-color: var(--color-oceania);
+	color: var(--color-light);
+	border: solid 1px var(--color-oceania);
+}
+
+.btn-secondary {
+	background-color: var(--color-light);
+	color: var(--color-oceania);
+	border: solid 1px var(--color-oceania);
+}
+
+@media (min-width: 400px) {
+	body {
+		font-size: 16px;
+	}
+}
