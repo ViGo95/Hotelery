@@ -18,7 +18,7 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
 	color: var(--color-dark);
 }
@@ -33,10 +33,12 @@ a {
 }
 
 button {
+	padding: 0;
 	background-color: transparent;
 	outline: none;
 	border: none;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .title {

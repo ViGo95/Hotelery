@@ -1,15 +1,31 @@
 <script>
-	// export let segment;
+  import { menu } from '../stores/store'
+
+	import Menu from './Menu'
+
+  let menuValue = false
+
+  menu.subscribe(value => {
+		menuValue = value
+  })
+
+	function toggleMenu() {
+		menu.update(value => value = !value)
+	}
 </script>
 
 <nav>
 	<div class="nav-content">
-		<button>
+		<button on:click={toggleMenu}>
 			<i class="fas fa-bars"></i>
 		</button>
+
+		{#if menuValue}
+			<Menu />
+		{/if}
 		<img src="images/oceania-logo.svg" width="100" height="100" alt="Oceania">
 		<a href="/">
-			<i class="far fa-comment"></i>
+			<i class="fas fa-comment"></i>
 		</a>
 	</div>
 

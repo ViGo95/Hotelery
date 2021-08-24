@@ -8,9 +8,9 @@
       <p>Hotelery © 2021</p>
     </div>
     <div class="Footer-content_extras">
-      <p>Term & conditions</p>
-      <p>Privacy policy</p>
-      <p>Parners</p>
+      <a href="/">Term & conditions</a>
+      <a href="/">Privacy policy</a>
+      <a href="/">Parners</a>
     </div>
   </div>
 </footer>
@@ -18,11 +18,11 @@
 <style>
   footer {
     position: absolute;
-    bottom: 0;
+    bottom: 12px;
     width: 100%;
   }
 
-  p {
+  a, p {
     color: #959CA1;
   }
 
@@ -33,5 +33,7 @@
   }
   .Footer-content_extras {
     display: flex;
+    justify-content: space-between;
+    width: 360px;
   }
 </style>

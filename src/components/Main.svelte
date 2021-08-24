@@ -1,18 +1,28 @@
 <script>
 
+	import { menu } from '../stores/store'
+
+	let menuValue
+
+	menu.subscribe(value => {
+		menuValue = value
+	})
+
+	function menuToggle() {
+		console.log('ola')
+		if (menuValue) {
+			menu.update(value => {
+				value = !value
+			})
+		}
+	}
+
 </script>
 
-<main>
+<main on:click={menuToggle}>
 	<slot></slot>
 </main>
 
 <style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+	
 </style>
