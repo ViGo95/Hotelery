@@ -1,12 +1,13 @@
 <script>
+
   import { menu } from '../stores/store'
 
 	import Menu from './Menu'
 
-  let menuValue = false
+  let showMenu = false
 
   menu.subscribe(value => {
-		menuValue = value
+		showMenu = value
   })
 
 	function toggleMenu() {
@@ -20,20 +21,15 @@
 			<i class="fas fa-bars"></i>
 		</button>
 
-		{#if menuValue}
+		{#if showMenu}
 			<Menu />
 		{/if}
+
 		<img src="images/oceania-logo.svg" width="100" height="100" alt="Oceania">
 		<a href="/">
-			<i class="fas fa-comment"></i>
+			<i class="far fa-comment"></i>
 		</a>
 	</div>
-
-	<!-- <ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
-	</ul> -->
 </nav>
 
 <style>
@@ -45,7 +41,7 @@
 	}
 
 	i {
-		font-size: 24px;
+		font-size: 30px;
 		color: var(--color-oceania);
 		margin-top: 12px;
 	}

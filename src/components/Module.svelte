@@ -1,8 +1,17 @@
 <script>
 
+  import { moduleStore } from '../stores/store'
+
+  function moduleHandler() {
+
+    moduleStore.update(value => {
+      value = !value
+    })
+  }
+
 </script>
 
-<button class="Module">
+<button class="Module" on:click={moduleHandler}>
   <div class="Module-container">
     <div class="Module-content">
       <img alt="Success Kid" src="images/lobby.png">
@@ -21,10 +30,10 @@
     overflow: hidden;
   }
 
-.Module-content {
-  width: 100%;
-  height: 100%;
-}
+  .Module-content {
+    width: 100%;
+    height: 100%;
+  }
 
   .Module-content p {
     text-align: center;

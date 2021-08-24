@@ -18,18 +18,18 @@
 <style>
   footer {
     position: absolute;
-    bottom: 12px;
+    bottom: 0;
     width: 100%;
   }
 
   a, p {
-    color: #959CA1;
+    color: var(--color-gray_light);
   }
 
   .Footer-content {
     display: flex;
     justify-content: space-between;
-    padding: 0 36px;
+    padding: 12px 36px;
   }
   .Footer-content_extras {
     display: flex;
