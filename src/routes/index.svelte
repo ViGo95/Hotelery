@@ -1,14 +1,19 @@
 <script>
 
+  import RoomService from '../components/Module/RoomService.svelte'
+
+	import { crossfade } from 'svelte/transition';
+
 	import { moduleStore } from '../stores/store'
 
 	import Home from '../components/Home.svelte'
-	import Info from '../components/Info.svelte'
+	import Module from '../components/Module/index.svelte'
 
-	let showModule = false
+	let showModule
 
 	moduleStore.subscribe(value => {
 		showModule = value
+		console.log(showModule)
 	})
 
 </script>
@@ -20,9 +25,9 @@
 <Home />
 
 {#if showModule}
-	<Info>
-		
-	</Info>
+	<Module>
+		<RoomService />
+	</Module>
 {/if}
 
 

@@ -11,7 +11,7 @@
   })
 
 	function toggleMenu() {
-		menu.update(value => value = !value)
+		menu.set(!showMenu)
 	}
 </script>
 
