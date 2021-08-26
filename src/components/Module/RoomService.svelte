@@ -23,6 +23,27 @@
       <div class="carousel-item">
         <img src="" alt="">
       </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="" alt="">
+      </div>
     </div>
     <div class="RoomService-info">
       <img src="" alt="">
@@ -46,6 +67,7 @@
 <style>
   .RoomService {
     margin-top: 24px;
+    overflow: hidden;
   }
 
   .RoomService-sections_title {
@@ -63,10 +85,12 @@
   }
 
   .RoomService-carousel {
+    display: flex;
     width: 100%;
-    display: inline-grid;
+    /* display: inline-grid;
     grid-gap: 18px;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); */
+    overflow-x: scroll;
   }
 
   .carousel-item {
