@@ -5,8 +5,10 @@
 	--color-light: #E5E5E5;
 	--color-dark: #3D3D3D;
 	--color-gray: #7B7B7B;
-	--color-gray_light: #959CA1;
 	--color-star: #F39C12;
+	--color-oceania_light:#656de2c9;
+	--color-gray_light: #959CA1;
+	--color-star: #f39d12c9;
 }
 
 /* STILOS GLOBALES */
@@ -40,6 +42,7 @@ button {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	transition: .2s;
 }
 
 .title {
@@ -55,12 +58,34 @@ button {
 	color: var(--color-light);
 	border: solid 1px var(--color-oceania);
 }
+.btn-main:hover {
+	background-color: var(--color-oceania_light);
+	border: solid 1px var(--color-oceania_light);
+}
 
 .btn-secondary {
 	background-color: var(--color-light);
 	color: var(--color-oceania);
 	border: solid 1px var(--color-oceania);
 }
+.btn-secondary:hover {
+	color: var(--color-oceania_light);
+	border: solid 1px var(--color-oceania_light);
+}
+
+  /* SCROLLBAR */
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-oceania);
+    border-radius: 2px;
+    transition: .2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #656de2c9;
+  }
 
 @media (min-width: 400px) {
 	body {

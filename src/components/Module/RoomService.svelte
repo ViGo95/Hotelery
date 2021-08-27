@@ -65,7 +65,7 @@
 
 <style>
   .RoomService {
-    margin-top: 24px;
+    margin-top: 4vh;
     overflow: hidden;
   }
 
@@ -86,13 +86,13 @@
   .RoomService-carousel {
     display: flex;
     align-items: center;
-    height: 150px;
+    height: 28vh;
     white-space: nowrap;
     overflow-x: auto;
   }
 
   .carousel-viewport {
-    padding: 0 20px;
+    padding: 0 3vh;
   }
 
   .carousel-item {
@@ -104,8 +104,8 @@
     border-radius: 5px;
   }
   .carousel-item img {
-    width: 90px;
-    height: 90px;
+    width: 15vh;
+    height: 15vh;
     border-radius: 5px;
     background-color: var(--color-light);
     transition: .2s;
@@ -125,7 +125,7 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 32px 0;
+    margin: 6vh 0;
   }
 
   .RoomService-item img {
@@ -168,16 +168,5 @@
 
   ::-webkit-scrollbar {
     height: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: var(--color-gray_light);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-gray);
-    border-radius: 1px;
-    transition: .2s;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-dark);
   }
 </style>

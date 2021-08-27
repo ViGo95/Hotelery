@@ -9,25 +9,28 @@
 </script>
 
 <section in:fade="{{ duration: 150 }}" out:fade="{{ duration: 150 }}" class="Module">
-  <div class="Module-content">
-    <div class="Module-title">
-      <h2 class="title">Titulo del modulo</h2>
-      <h4 class="subtitle">Subtitulo del modulo</h4>
+  <!-- <div class="Module-container"> -->
+    <div class="Module-content">
+      <div class="Module-title">
+        <h2 class="title">Titulo del modulo</h2>
+        <h4 class="subtitle">Subtitulo del modulo</h4>
+      </div>
+
+      {#if showModule === 'roomService'}
+        <RoomService />
+      {:else if showModule === 'lobby'}
+        <h2>Lobby</h2>
+      {/if}
+
     </div>
-
-		{#if showModule === 'roomService'}
-			<RoomService />
-		{:else if showModule === 'lobby'}
-			<h2>Lobby</h2>
-		{/if}
-
-  </div>
+  <!-- </div> -->
 </section>
 
 <style>
   .Module {
 		height: 100vh;
 		width: 40vw;
+    padding: 28px;
     z-index: 1;
     background-color: var(--color-light);
     box-sizing: border-box;
@@ -39,7 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 28px;
+		width: 100%;
     box-sizing: content-box;
   }
 
