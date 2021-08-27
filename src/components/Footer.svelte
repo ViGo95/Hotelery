@@ -1,9 +1,21 @@
 <script>
-  
+  import { menu } from '../stores/store'
+
+  let showMenu = false
+
+  menu.subscribe(value => {
+    showMenu = value
+  })
+
+  function toggles() {
+    if (showMenu) {
+      menu.set(false)
+    }
+  }
 </script>
 
 <footer>
-  <div class="Footer-content">
+  <div class="Footer-content" on:click={toggles}>
     <div class="Footer-content_copy">
       <p>Hotelery © 2021</p>
     </div>

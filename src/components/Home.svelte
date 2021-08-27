@@ -15,7 +15,7 @@
 
   function toggles() {
     if (showMenu) {
-      menu.set(!showMenu)
+      menu.set(false)
     }
   }
 
@@ -33,7 +33,7 @@
   <div class="Modules">
     <div class="Modules-content">
 
-      <button class="Module" on:click={() => moduleHandler('module')}>
+      <button class="Module" on:click={() => moduleHandler('roomService')}>
         <div class="Module-container">
           <div class="Module-content">
             <img alt="Success Kid" src="images/lobby.png">
@@ -42,7 +42,7 @@
         </div>
       </button>
 
-      <button class="Module" on:click={() => moduleHandler('hola')}>
+      <button class="Module" on:click={() => moduleHandler('lobby')}>
         <div class="Module-container">
           <div class="Module-content">
             <img alt="Success Kid" src="images/lobby.png">
@@ -103,8 +103,13 @@
     height: 100%;
     border: solid 3px var(--color-light);
     border-radius: 15px;box-sizing: border-box;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+  }
+  .Module-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    transition: .3s;
   }
 
   .Module-content {

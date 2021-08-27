@@ -1,9 +1,5 @@
 <script>
 
-  import RoomService from '../components/Module/RoomService.svelte'
-
-	import { crossfade } from 'svelte/transition';
-
 	import { moduleStore } from '../stores/store'
 
 	import Home from '../components/Home.svelte'
@@ -25,14 +21,12 @@
 <Home />
 
 {#if showModule}
-	<Module>
-		<RoomService />
+	<Module {showModule}>
+
 	</Module>
 {/if}
 
 
 <style>
-	@media (min-width: 480px) {
 
-	}
 </style>
