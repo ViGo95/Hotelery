@@ -1,17 +1,24 @@
 <script>
+
+  import { mock } from '../../stores/mock'
+
   import Carousel from "./Carousel.svelte";
   import Item from "./Item.svelte";
+
+  let roomsMock = mock.rooms
+  let moduleName = 'rooms'
+
 </script>
 
 <div class="Rooms">
 
   <div class="Rooms-title">
-    <h2 class="title">Habitaciones</h2>
-    <h4 class="subtitle">Conoce todas las comodidades que tenemos para ti</h4>
+    <h2 class="title"> { roomsMock.title } </h2>
+    <h4 class="subtitle"> { roomsMock.desc } </h4>
   </div>
 
-  <Carousel />
-  <Item />
+  <Carousel {moduleName}/>
+  <Item {moduleName}/>
 
   <div class="Rooms-Item_conditions">
     <div class="condition">

@@ -1,40 +1,42 @@
 <script>
 
+  import { mock } from '../../stores/mock'
+
+  export let moduleName;
+
+  let roomServiceMock = mock[moduleName]
+  let serviceType = 0
+
+  function typeHandler() {
+    if (serviceType === roomServiceMock.types.length-1) {
+      serviceType = 0
+    } else {
+      serviceType += 1
+    }
+  }
+
 </script>
+
 <div class="Carousel">
   <div class="Carousel-title">
-    <h4>Platos fuertes</h4>
-    <button>
+    <h4> { roomServiceMock.types[serviceType].title } </h4>
+    <button on:click={typeHandler}>
       <i class="fas fa-exchange-alt"></i>
     </button>
   </div>
 
   <div class="Carousel-content">
     <div class="Carousel-viewport">
-      <div class="Carousel-item">
-        <img src="" alt="">
-        <p>Food title</p>
-      </div>
-      <div class="Carousel-item">
-        <img src="" alt="">
-        <p>Food title</p>
-      </div>
-      <div class="Carousel-item">
-        <img src="" alt="">
-        <p>Food title</p>
-      </div>
-      <div class="Carousel-item">
-        <img src="" alt="">
-        <p>Food title</p>
-      </div>
-      <div class="Carousel-item">
-        <img src="" alt="">
-        <p>Food title</p>
-      </div>
-      <div class="Carousel-item">
-        <img src="" alt="">
-        <p>Food title</p>
-      </div>
+
+      {#each roomServiceMock.types[serviceType].items as item}
+
+        <div class="Carousel-item">
+          <img src=" { item.images[serviceType] } " alt=" { item.title } ">
+          <p> { item.title } </p>
+        </div>
+
+      {/each}
+
     </div>
   </div>
 </div>

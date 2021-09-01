@@ -9,7 +9,6 @@
 
 	moduleStore.subscribe(value => {
 		showModule = value
-		console.log(showModule)
 	})
 
 </script>
