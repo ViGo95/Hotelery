@@ -42,7 +42,7 @@
         </div>
       </button>
 
-      <button class="Module" on:click={() => moduleHandler('lobby')}>
+      <button class="Module" on:click={() => moduleHandler('rooms')}>
         <div class="Module-container">
           <div class="Module-content">
             <img alt="Success Kid" src="images/lobby.png">
@@ -105,11 +105,11 @@
     border-radius: 15px;box-sizing: border-box;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    transition: .4s;
   }
   .Module-container:hover {
     transform: scale(1.1);
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
-    transition: .4s;
   }
 
   .Module-content {

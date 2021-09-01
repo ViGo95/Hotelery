@@ -73,6 +73,10 @@ button {
 	border: solid 1px var(--color-oceania_light);
 }
 
+.fa-star {
+	color: var(--color-star)
+}
+
   /* SCROLLBAR */
 
   ::-webkit-scrollbar-track {

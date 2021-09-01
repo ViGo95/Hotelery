@@ -40,9 +40,18 @@
     padding: 12px 36px 0 36px;
 	}
 
+	button {
+		transition: .2s;
+	}
+
 	i {
 		font-size: 30px;
 		color: var(--color-oceania);
 		margin-top: 12px;
+		transition: .1s;
+	}
+
+	button:hover, i:hover {
+		opacity: .6;
 	}
 </style>
