@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
 
-export let menu = writable(false)
+export let menuStore = writable(false)
 export let moduleStore = writable('')
+export let moduleItemStore = writable('')

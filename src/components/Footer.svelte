@@ -1,15 +1,15 @@
 <script>
-  import { menu } from '../stores/store'
+  import { menuStore } from '../stores/store'
 
   let showMenu = false
 
-  menu.subscribe(value => {
+  menuStore.subscribe(value => {
     showMenu = value
   })
 
   function toggles() {
     if (showMenu) {
-      menu.set(false)
+      menuStore.set(false)
     }
   }
 </script>

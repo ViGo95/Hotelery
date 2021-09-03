@@ -1,8 +1,10 @@
 export let mock = {
-  roomService: {
+  modules: {
+    roomService: {
+      id: 'roomService',
       title: 'Servicio a la habitación',
-      cover: 'roomservice.png',
-      types: [
+      cover: 'roomservice.jpg',
+      sections: [
         {
           title: 'Platos fuertes',
           items: [
@@ -16,7 +18,7 @@ export let mock = {
                 'riss01_3.png',
                 'riss01_4.png',
               ],
-              price: 0
+              price: 9.99
             },
             {
               id: 'riss02',
@@ -28,7 +30,7 @@ export let mock = {
                 'riss02_3.png',
                 'riss02_4.png',
               ],
-              price: 0
+              price: 9.99
             },
             {
               id: 'past01',
@@ -40,11 +42,11 @@ export let mock = {
                 'past01_3.png',
                 'past01_4.png',
               ],
-              price: 0
+              price: 8.99
             },
             {
               id: 'hamb01',
-              title: 'Hamburguesa "La Asesina"',
+              title: '"La Asesina"',
               desc: 'Hamburguesa con 200gr de costilla de cerdo, plátano maduro en reducción de jugo de naranja, pimentón rostizado, queso brie, acompañado de nuestras papas simple!!!',
               images: [
                 'hamb01_1.png',
@@ -52,7 +54,7 @@ export let mock = {
                 'hamb01_3.png',
                 'hamb01_4.png',
               ],
-              price: 0
+              price: 5.99
             },
             {
               id: 'pizz01',
@@ -64,7 +66,7 @@ export let mock = {
                 'pizz01_3.png',
                 'pizz01_4.png',
               ],
-              price: 0
+              price: 8.99
             },
           ],
           desc: 'Selección de platos del hotel.',
@@ -82,7 +84,7 @@ export let mock = {
                 'foca01_3.png',
                 'foca01_4.png',
               ],
-              price: 0
+              price: 4.99
             },
           ],
           desc: 'Selección de platos del hotel.',
@@ -91,25 +93,54 @@ export let mock = {
       desc: '¿Qué podemos ofrecerte?',
     },
     rooms: {
+      id: 'rooms',
       title: 'Habitaciones',
-      cover: '',
-      types: [
+      cover: 'rooms.jpg',
+      sections: [
         {
-          title: '',
+          title: 'Habitaciones de lujo',
           items: [
             {
-              id: '',
-              title: '',
-              desc: '',
+              id: 'pres01',
+              title: 'Presidencial Master',
+              desc: 'Habitación tipo apartamento para hasta 4 personas que cuentan con 2 habitaciones, 3 baños completos, jacuzzi, 2 salas de estar, comedor y cocina.',
               images: [
-
+                'pres01_1.jpg',
+                'pres01_2.jpg',
+                'pres01_3.jpg',
+                'pres01_4.jpg',
               ],
-              price: 0
-            }
+              price: 180
+            },
+            {
+              id: 'pres02',
+              title: 'Presidencial Junior',
+              desc: 'Habitación tipo apartamento para una o dos personas que cuentan con 1 habitación, 1 baño completo, sala de estar, comedor y cocina.',
+              images: [
+                'pres02_1.jpg',
+                'pres02_2.jpg',
+                'pres02_3.jpg',
+                'pres02_4.jpg',
+              ],
+              price: 140
+            },
+            {
+              id: 'suit01',
+              title: 'Suite Oceania',
+              desc: 'Habitación tipo apartamento para una o dos personas.',
+              images: [
+                'suit01_1.jpg',
+                'suit01_2.jpg',
+                'suit01_3.jpg',
+                'suit01_4.jpg',
+              ],
+              price: 100
+            },
           ],
-          desc: '',
+          desc: 'Habitaciones del hotel',
         },
       ],
       desc: 'Conoce todas las comodidades que tenemos para ti',
     },
+  },
 }

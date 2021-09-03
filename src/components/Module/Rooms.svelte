@@ -5,20 +5,19 @@
   import Carousel from "./Carousel.svelte";
   import Item from "./Item.svelte";
 
-  let roomsMock = mock.rooms
-  let moduleName = 'rooms'
+  let moduleMock = mock.modules.rooms
 
 </script>
 
 <div class="Rooms">
 
   <div class="Rooms-title">
-    <h2 class="title"> { roomsMock.title } </h2>
-    <h4 class="subtitle"> { roomsMock.desc } </h4>
+    <h2 class="title"> { moduleMock.title } </h2>
+    <h4 class="subtitle"> { moduleMock.desc } </h4>
   </div>
 
-  <Carousel {moduleName}/>
-  <Item {moduleName}/>
+  <Carousel {moduleMock}/>
+  <Item {moduleMock}/>
 
   <div class="Rooms-Item_conditions">
     <div class="condition">

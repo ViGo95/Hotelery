@@ -1,11 +1,14 @@
 <script>
 
-  import { menu, moduleStore } from '../stores/store'
+  import { menuStore, moduleStore, moduleItemStore } from '../stores/store'
+  import { mock } from '../stores/mock'
 
   let showMenu = false
   let showModule = false
+  let moduleItem = false
+  let modules = mock.modules
 
-  menu.subscribe(value => {
+  menuStore.subscribe(value => {
     showMenu = value
   })
 
@@ -13,9 +16,16 @@
     showModule = value
   })
 
+  moduleItemStore.subscribe(value => {
+    moduleItem = value
+  })
+
   function toggles() {
     if (showMenu) {
-      menu.set(false)
+      menuStore.set(false)
+    }
+    if (moduleItem) {
+      moduleItemStore.set('')
     }
   }
 
@@ -33,47 +43,23 @@
   <div class="Modules">
     <div class="Modules-content">
 
-      <button class="Module" on:click={() => moduleHandler('roomService')}>
-        <div class="Module-container">
-          <div class="Module-content">
-            <img alt="Success Kid" src="images/lobby.png">
-            <p>Module</p>
-          </div>
-        </div>
-      </button>
+      {#each Object.values(modules) as module}
 
-      <button class="Module" on:click={() => moduleHandler('rooms')}>
-        <div class="Module-container">
-          <div class="Module-content">
-            <img alt="Success Kid" src="images/lobby.png">
-            <p>Module</p>
+        <button class="Module" on:click={() => moduleHandler(module.id)}>
+          <div class="Module-container">
+            <div class="Module-content">
+              <img src="images/{ module.cover }" alt=" { module.title } ">
+              <p> { module.title } </p>
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
 
-      <button class="Module" on:click={moduleHandler}>
-        <div class="Module-container">
-          <div class="Module-content">
-            <img alt="Success Kid" src="images/lobby.png">
-            <p>Module</p>
-          </div>
-        </div>
-      </button>
+      {/each}
 
-      <button class="Module" on:click={moduleHandler}>
+      <button class="Module">
         <div class="Module-container">
-          <div class="Module-content">
-            <img alt="Success Kid" src="images/lobby.png">
-            <p>Module</p>
-          </div>
-        </div>
-      </button>
-
-      <button class="Module" on:click={moduleHandler}>
-        <div class="Module-container">
-          <div class="Module-content">
-            <img alt="Success Kid" src="images/lobby.png">
-            <p>Module</p>
+          <div class="Module-content" style="display: flex; align-items: center; justify-content: center;">
+            <p>Coming soon...</p>
           </div>
         </div>
       </button>
@@ -115,6 +101,11 @@
   .Module-content {
     width: 100%;
     height: 100%;
+  }
+
+  .Module-content img {
+    width: 100%;
+    height: 85%;
   }
 
   .Module-content p {

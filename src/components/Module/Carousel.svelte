@@ -1,25 +1,28 @@
 <script>
 
-  import { mock } from '../../stores/mock'
+  import { moduleItemStore } from "../../stores/store";
 
-  export let moduleName;
+  export let moduleMock;
 
-  let roomServiceMock = mock[moduleName]
-  let serviceType = 0
+  let section = 0
 
   function typeHandler() {
-    if (serviceType === roomServiceMock.types.length-1) {
-      serviceType = 0
+    if (section === moduleMock.sections.length-1) {
+      section = 0
     } else {
-      serviceType += 1
+      section += 1
     }
+  }
+
+  function itemHandler(item) {
+    moduleItemStore.set(item)
   }
 
 </script>
 
 <div class="Carousel">
   <div class="Carousel-title">
-    <h4> { roomServiceMock.types[serviceType].title } </h4>
+    <h4> { moduleMock.sections[section].title } </h4>
     <button on:click={typeHandler}>
       <i class="fas fa-exchange-alt"></i>
     </button>
@@ -28,10 +31,10 @@
   <div class="Carousel-content">
     <div class="Carousel-viewport">
 
-      {#each roomServiceMock.types[serviceType].items as item}
+      {#each moduleMock.sections[section].items as item}
 
-        <div class="Carousel-item">
-          <img src=" { item.images[serviceType] } " alt=" { item.title } ">
+        <div on:click={() => itemHandler(item)} class="Carousel-item">
+          <img src=" images/{ item.images[0] } " alt=" { item.title } ">
           <p> { item.title } </p>
         </div>
 
@@ -65,7 +68,7 @@
   }
 
   .Carousel-viewport {
-    padding: 0 3vh;
+    padding: 0 1.3vh;
   }
 
   .Carousel-item {
@@ -73,7 +76,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 0 -10px 0;
+    margin: 0 12px -10px 12px;
     border-radius: 5px;
   }
   .Carousel-item img {
@@ -90,6 +93,7 @@
 
   .Carousel-item p {
     font-size: 12px;
+    font-weight: 600;
     text-align: center;
     z-index: 2;
   }

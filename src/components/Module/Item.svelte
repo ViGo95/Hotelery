@@ -1,19 +1,32 @@
 <script>
 
+  import { moduleItemStore } from '../../stores/store'
+
+  let item;
+
+  moduleItemStore.subscribe(value => item = value)
+  console.log(item)
+
 </script>
 
 <div class="Item">
-  <img src="" alt="">
-  <div class="Item-info">
-    <div class="Item-description">
-      <h2 class="title">Item title</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut, nobis sunt quisquam perferendis quibusdam expedita, similique deserunt temporibus rem laudantium maxime!</p>
+
+  {#if item}
+
+    <img src=" images/{ item.images[0] } " alt=" { item.title } ">
+    <div class="Item-info">
+      <div class="Item-description">
+        <h2 class="title"> { item.title } </h2>
+        <p> { item.desc } </p>
+      </div>
+      <div class="Item-value">
+        <div><p> { item.price }$ </p></div>
+        <button class="btn-main">Agregar a pedidos <i class="fas fa-plus-circle"></i></button>
+      </div>
     </div>
-    <div class="Item-value">
-      <div><p>9,99$</p></div>
-      <button class="btn-main">Agregar a pedidos <i class="fas fa-plus-circle"></i></button>
-    </div>
-  </div>
+
+  {/if}
+
 </div>
 
 <style>
@@ -21,6 +34,7 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+    height: 16vw;
   }
 
   .Item img {
