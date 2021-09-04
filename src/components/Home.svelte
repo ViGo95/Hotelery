@@ -1,16 +1,11 @@
 <script>
 
-  import { menuStore, moduleStore, moduleItemStore } from '../stores/store'
+  import { moduleStore, moduleItemStore } from '../stores/store'
   import { mock } from '../stores/mock'
 
-  let showMenu = false
   let showModule = false
   let moduleItem = false
   let modules = mock.modules
-
-  menuStore.subscribe(value => {
-    showMenu = value
-  })
 
   moduleStore.subscribe(value => {
     showModule = value
@@ -21,9 +16,6 @@
   })
 
   function toggles() {
-    if (showMenu) {
-      menuStore.set(false)
-    }
     if (moduleItem) {
       moduleItemStore.set('')
     }
@@ -59,7 +51,7 @@
       <button class="Module">
         <div class="Module-container">
           <div class="Module-content" style="display: flex; align-items: center; justify-content: center;">
-            <p>Coming soon...</p>
+            <p>Próximamente...</p>
           </div>
         </div>
       </button>

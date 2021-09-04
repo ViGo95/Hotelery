@@ -23,9 +23,15 @@
 <div class="Carousel">
   <div class="Carousel-title">
     <h4> { moduleMock.sections[section].title } </h4>
-    <button on:click={typeHandler}>
-      <i class="fas fa-exchange-alt"></i>
-    </button>
+
+    {#if moduleMock.sections.length > 1}
+
+        <button on:click={typeHandler}>
+          <i class="fas fa-exchange-alt"></i>
+        </button>
+
+    {/if}
+
   </div>
 
   <div class="Carousel-content">
@@ -33,9 +39,9 @@
 
       {#each moduleMock.sections[section].items as item}
 
-        <div on:click={() => itemHandler(item)} class="Carousel-item">
+        <div class="Carousel-item" on:click={() => itemHandler(item)}>
           <img src=" images/{ item.images[0] } " alt=" { item.title } ">
-          <p> { item.title } </p>
+          <h4> { item.title } </h4>
         </div>
 
       {/each}
@@ -91,10 +97,14 @@
     z-index: 1;
   }
 
-  .Carousel-item p {
+  .Carousel-item h4 {
+    background: var(--color-light);
+    color: inherit;
+    padding: 2px 8px;
     font-size: 12px;
     font-weight: 600;
     text-align: center;
+    border-radius: 100px;
     z-index: 2;
   }
 

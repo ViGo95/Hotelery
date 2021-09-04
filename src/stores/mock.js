@@ -110,7 +110,46 @@ export let mock = {
                 'pres01_3.jpg',
                 'pres01_4.jpg',
               ],
-              price: 180
+              price: 180,
+              extra: {
+                elements: [
+                  {
+                    title: 'Sala de Recibo',
+                    desc: 'Con sofá de 5 puestos y Tv de 52"',
+                    icon: 'fas fa-couch'
+                  },
+                  {
+                    title: 'Sala Secundaria',
+                    desc: 'Con sofá de 4 puestos',
+                    icon: 'fas fa-couch'
+                  },
+                  {
+                    title: 'Baño Completo',
+                    desc: '',
+                    icon: 'fas fa-toilet'
+                  },
+                  {
+                    title: 'Comedor',
+                    desc: 'De 6 puestos con su vajilla completa',
+                    icon: 'fas fa-utensils'
+                  },
+                  {
+                    title: 'Cocina',
+                    desc: '',
+                    icon: 'fas fa-blender'
+                  },
+                  {
+                    title: 'Microondas',
+                    desc: '',
+                    icon: 'fas fa-temperature-high'
+                  },
+                  {
+                    title: 'Nevera Ejecutiva',
+                    desc: '',
+                    icon: 'fas fa-temperature-high'
+                  },
+                ]
+              },
             },
             {
               id: 'pres02',
