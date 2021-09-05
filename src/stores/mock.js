@@ -146,7 +146,53 @@ export let mock = {
                   {
                     title: 'Nevera Ejecutiva',
                     desc: '',
-                    icon: 'fas fa-temperature-high'
+                    icon: 'fas fa-temperature-low'
+                  },
+                  {
+                    title: 'Cuarto Principal',
+                    desc: '',
+                    icon: 'fas fa-door-open',
+                    subs: [
+                      {
+                        title: 'Cama King Size',
+                        icon: 'fas fa-bed'
+                      },
+                      {
+                        title: 'TV 52"',
+                        icon: 'fas fa-tv'
+                      },
+                      {
+                        title: 'Jacuzzi con tv de 32"',
+                        icon: 'fas fa-hot-tub'
+                      },
+                      {
+                        title: 'Baño Completo',
+                        icon: 'fas fa-toilet'
+                      },
+                      {
+                        title: 'Closet',
+                        icon: 'fas fa-door-closed'
+                      },
+                    ]
+                  },
+                  {
+                    title: 'Cuarto Secundario',
+                    desc: '',
+                    icon: 'fas fa-door-open',
+                    subs: [
+                      {
+                        title: 'Cama King Size',
+                        icon: 'fas fa-bed'
+                      },
+                      {
+                        title: 'Baño Completo',
+                        icon: 'fas fa-toilet'
+                      },
+                      {
+                        title: 'Closet',
+                        icon: 'fas fa-door-closed'
+                      },
+                    ]
                   },
                 ]
               },
@@ -161,7 +207,56 @@ export let mock = {
                 'pres02_3.jpg',
                 'pres02_4.jpg',
               ],
-              price: 140
+              price: 140,
+              extra: {
+                elements: [
+                  {
+                    title: 'Sala de Recibo',
+                    desc: 'Con sofá de 5 puestos y Tv de 52"',
+                    icon: 'fas fa-couch'
+                  },
+                  {
+                    title: 'Sala Secundaria',
+                    desc: 'Con sofá de 4 puestos',
+                    icon: 'fas fa-couch'
+                  },
+                  {
+                    title: 'Baño Completo',
+                    desc: '',
+                    icon: 'fas fa-toilet'
+                  },
+                  {
+                    title: 'Comedor',
+                    desc: 'De 6 puestos con su vajilla completa',
+                    icon: 'fas fa-utensils'
+                  },
+                  {
+                    title: 'Cocina',
+                    desc: '',
+                    icon: 'fas fa-blender'
+                  },
+                  {
+                    title: 'Microondas',
+                    desc: '',
+                    icon: 'fas fa-temperature-high'
+                  },
+                  {
+                    title: 'Nevera Ejecutiva',
+                    desc: '',
+                    icon: 'fas fa-temperature-low'
+                  },
+                  {
+                    title: 'Cuarto Principal',
+                    desc: '',
+                    icon: 'fas fa-door-open'
+                  },
+                  {
+                    title: 'Cuarto Secundario',
+                    desc: '',
+                    icon: 'fas fa-door-open'
+                  },
+                ]
+              },
             },
             {
               id: 'suit01',

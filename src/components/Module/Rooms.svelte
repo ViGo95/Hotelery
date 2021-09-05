@@ -6,6 +6,7 @@
   import Item from "./Item.svelte";
 
   let moduleMock = mock.modules.rooms
+  let moduleName = 'room'
 
 </script>
 
@@ -17,37 +18,7 @@
   </div>
 
   <Carousel {moduleMock}/>
-  <Item {moduleMock}/>
-
-  <div class="Rooms-Item_conditions">
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-    <div class="condition">
-      <p><i class="fas fa-bed"></i> Condition</p>
-    </div>
-  </div>
+  <Item {moduleName}/>
 
 </div>
 
@@ -67,19 +38,5 @@
   .subtitle {
     color: var(--color-gray);
     font-weight: 400;
-  }
-
-  .Rooms-Item_conditions {
-    display: grid;
-    grid-gap: 16px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .condition {
-    font-size: 14px;
-  }
-
-  .fa-bed {
-    margin: 0 6px 0 0;
   }
 </style>

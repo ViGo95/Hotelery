@@ -82,7 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 12px -10px 12px;
+    margin: 0 0 -10px 0;
     border-radius: 5px;
   }
   .Carousel-item img {
@@ -93,7 +93,7 @@
     transition: .2s;
   }
   .Carousel-item img:hover {
-    transform: scale(1.4);
+    transform: scale(1.2);
     z-index: 1;
   }
 
@@ -101,10 +101,10 @@
     background: var(--color-light);
     color: inherit;
     padding: 2px 8px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     text-align: center;
-    border-radius: 100px;
+    width: 15vh;
     z-index: 2;
   }
 

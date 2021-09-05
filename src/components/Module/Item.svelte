@@ -1,11 +1,29 @@
 <script>
 
-  import { moduleItemStore } from '../../stores/store'
+  import { moduleItemStore, orderListStore } from '../../stores/store'
 
-  let item;
+  let item, list;
+  export let moduleName;
 
   moduleItemStore.subscribe(value => item = value)
-  console.log(item)
+  orderListStore.subscribe(value => list = value)
+
+  function addToList(element) {
+    if (list.length > 0) {
+      let foundItem = list.find(e => e.title === element.title)
+
+      if (foundItem) {
+        let itemIndex = list.findIndex(e => e.title === element.title)
+        list[itemIndex].counted += 1
+      } else {
+        element.counted = 1
+        orderListStore.update(values => ([...values, element]))
+      }
+    } else {
+      element.counted = 1
+      orderListStore.update(values => ([...values, element]))
+    }
+  }
 
 </script>
 
@@ -21,13 +39,29 @@
       </div>
       <div class="Item-value">
         <div><p> { item.price }$ </p></div>
-        <button class="btn-main">Agregar a pedidos <i class="fas fa-plus-circle"></i></button>
+        {#if moduleName === 'roomService'}
+        <button class="btn-main" on:click={() => addToList(item)}>Agregar a pedidos <i class="fas fa-plus-circle"></i></button>
+        {/if}
       </div>
     </div>
 
   {/if}
 
 </div>
+
+  {#if item.extra}
+
+  <div class="Item_conditions">
+  {#each item.extra.elements as element}
+
+    <div class="condition">
+      <p><i class="{ element.icon }"></i> { element.title }</p>
+    </div>
+
+  {/each}
+  </div>
+
+  {/if}
 
 <style>
   .Item {
@@ -62,6 +96,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .Item_conditions {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px 0 0 0;
+  }
+
+  .condition {
+    font-size: 12px;
   }
 
   .title {

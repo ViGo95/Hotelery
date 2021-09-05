@@ -1,11 +1,20 @@
 <script>
 
+  import { moduleItemStore } from '../../stores/store';
   import { mock } from '../../stores/mock'
 
   import Carousel from "./Carousel.svelte";
   import Item from "./Item.svelte";
+  import List from './List.svelte';
 
+  let showList = false
   let moduleMock = mock.modules.roomService
+  let moduleName = 'roomService'
+
+  function listToggle() {
+    moduleItemStore.set('')
+    showList = !showList
+  }
 
 </script>
 
@@ -16,15 +25,28 @@
     <h4 class="subtitle"> { moduleMock.desc } </h4>
   </div>
 
-  <Carousel {moduleMock}/>
-  <Item {moduleMock}/>
+  {#if showList}
 
-  <button class="btn-secondary">Lista de  pedidos <i class="fas fa-clipboard-list"></i></button>
+  <button class="list-button" on:click={listToggle}><i class="fas fa-reply"></i></button>
+
+  <List {listToggle}/>
+
+  <button class="btn-secondary">Realizar el pedido <i class="fas fa-check-circle"></i></button>
+
+  {:else}
+
+  <Carousel {moduleMock}/>
+  <Item {moduleName}/>
+
+  <button class="btn-secondary" on:click={listToggle}>Lista de  pedidos <i class="fas fa-clipboard-list"></i></button>
+
+  {/if}
 
 </div>
 
 <style>
   .RoomService {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -39,6 +61,14 @@
   .subtitle {
     color: var(--color-gray);
     font-weight: 400;
+  }
+
+  .list-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--color-oceania);
+    font-size: 24px;
   }
 
   .btn-secondary {
