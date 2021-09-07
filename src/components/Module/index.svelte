@@ -4,6 +4,7 @@
 
   import RoomService from './RoomService.svelte'
   import Rooms from './Rooms.svelte'
+  import Inbox from './Inbox.svelte';
 
   export let showModule;
 
@@ -15,6 +16,8 @@
     <RoomService />
   {:else if showModule === 'rooms'}
     <Rooms />
+  {:else if showModule === 'rooms'}
+    <Inbox />
   {/if}
 
 </section>

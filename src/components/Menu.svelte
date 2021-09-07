@@ -30,20 +30,20 @@
             {#each Object.values(modules) as module}
 
             <li>
-              <a href="/"> { module.title } </a>
+              <button> { module.title } </button>
               <button><i class="fas fa-star"></i></button>
             </li>
 
             {/each}
 
             <li>
-              <a href="/">Servicios</a>
+              <button>Servicios</button>
             </li>
             <li>
-              <a href="/">Mensajes</a>
+              <button>Mensajes</button>
             </li>
             <li>
-              <a href="/">Configuración</a>
+              <button>Configuración</button>
             </li>
           </ul>
         </div>
@@ -85,6 +85,10 @@
   }
 
   button {
+    font-size: 16px;
+  }
+
+  .fa-star {
     color: var(--color-star);
     font-size: 16px;
     margin-left: 20px;

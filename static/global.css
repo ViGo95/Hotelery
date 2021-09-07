@@ -36,6 +36,7 @@ a {
 }
 
 button {
+	font-family: 'Poppins', sans-serif;
 	padding: 0;
 	background-color: transparent;
 	outline: none;

@@ -31,8 +31,6 @@
 
   <List {listToggle}/>
 
-  <button class="btn-secondary">Realizar el pedido <i class="fas fa-check-circle"></i></button>
-
   {:else}
 
   <Carousel {moduleMock}/>

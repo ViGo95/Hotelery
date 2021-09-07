@@ -76,8 +76,8 @@
   }
 
   .Module-container {
-    width: 180px;
-    height: 170px;
+    width: 14vw;
+    height: 13.5vw;
     border: solid 3px var(--color-light);
     border-radius: 15px;box-sizing: border-box;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
@@ -101,7 +101,6 @@
 
   .Module-content p {
     text-align: center;
-    margin-top: 4px;
     font-size: 12px;
     font-weight: 600;
   }

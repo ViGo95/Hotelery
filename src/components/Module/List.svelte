@@ -1,6 +1,6 @@
 <script>
 
-  import { orderListStore, moduleItemStore } from '../../stores/store'
+  import { orderListStore, ordersStore, moduleItemStore } from '../../stores/store'
 
   export let listToggle
 
@@ -18,9 +18,16 @@
     total = parcial.toFixed(2)
   })
 
+  ordersStore.subscribe(value => console.log(value))
+
   function addMoreItems() {
     moduleItemStore.set('')
     listToggle()
+  }
+
+  function makeOrder() {
+    ordersStore.update(values => ([...values, list]))
+    orderListStore.set([])
   }
 
 </script>
@@ -60,6 +67,17 @@
   </div>
 </div>
 
+{#if Object.values(list)[0]}
+
+<button class="btn-main" on:click={makeOrder}>Realizar el pedido <i class="fas fa-check-circle"></i></button>
+
+{:else}
+
+<button class="btn-main" on:click={addMoreItems}>Agrega items <i class="fas fa-clipboard-list"></i></button>
+
+{/if}
+
+
 <style>
   .List {
     display: flex;
@@ -68,26 +86,29 @@
   }
 
   .List-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     height: 70vh;
-    padding: 20px 20px 0 20px;
+    padding: 10px 10px 0 10px;
   }
 
   .List-content {
     display: grid;
-    grid-gap: 16px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3vh 1vw;
+    grid-template-columns: repeat(auto-fill, minmax(9vw, 1fr));
   }
 
   .List-item {
     position: relative;
-    width: 15vh;
-    height: 15vh;
+    width: 10vw;
+    height: 10vw;
     border-radius: 5px;
   }
   .List-item img {
-    width: 15vh;
-    height: 15vh;
+    width: 10vw;
+    height: 10vw;
     border-radius: 5px;
     background-color: var(--color-light);
     transition: .2s;
@@ -115,8 +136,8 @@
   .List-content button {
     color: var(--color-gray_light);
     font-size: 26px;
-    width: 15vh;
-    height: 15vh;
+    width: 10vw;
+    height: 10vw;
     border-radius: 5px;
     border: solid 1px var(--color-gray_light);
     background-color: var(--color-light);
@@ -130,5 +151,15 @@
 
   .List-total {
     margin: 16px 0 0 0;
+  }
+
+  .btn-main {
+    font-size: 14px;
+    width: 100%;
+    height: 40px;
+  }
+  .btn-main i {
+    font-size: 14px;
+    margin: 0 6px;
   }
 </style>
