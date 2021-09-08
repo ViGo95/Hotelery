@@ -17,7 +17,7 @@
 <footer>
   <div class="Footer-content" on:click={toggles}>
     <div class="Footer-content_copy">
-      <p>Hotelery © 2021</p>
+      <p>Roomery © 2021</p>
     </div>
     <div class="Footer-content_extras">
       <a href="/">Term & conditions</a>

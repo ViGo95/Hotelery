@@ -18,8 +18,6 @@
     total = parcial.toFixed(2)
   })
 
-  ordersStore.subscribe(value => console.log(value))
-
   function addMoreItems() {
     moduleItemStore.set('')
     listToggle()
@@ -130,7 +128,7 @@
     height: 24px;
     background-color: var(--color-oceania);
     border-radius: 100%;
-    border: solid 1px var(--color-light);
+    border: solid 2px var(--color-light);
   }
 
   .List-content button {

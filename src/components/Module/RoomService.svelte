@@ -1,6 +1,6 @@
 <script>
 
-  import { moduleItemStore } from '../../stores/store';
+  import { moduleItemStore, orderListStore } from '../../stores/store';
   import { mock } from '../../stores/mock'
 
   import Carousel from "./Carousel.svelte";
@@ -10,6 +10,9 @@
   let showList = false
   let moduleMock = mock.modules.roomService
   let moduleName = 'roomService'
+  let orderList = 0
+
+  orderListStore.subscribe(value => orderList = value.length)
 
   function listToggle() {
     moduleItemStore.set('')
@@ -36,7 +39,10 @@
   <Carousel {moduleMock}/>
   <Item {moduleName}/>
 
-  <button class="btn-secondary" on:click={listToggle}>Lista de  pedidos <i class="fas fa-clipboard-list"></i></button>
+  <div class="list-section">
+    <div>{orderList || 0}</div>
+    <button class="btn-secondary" on:click={listToggle}>Lista de  pedidos <i class="fas fa-clipboard-list"></i></button>
+  </div>
 
   {/if}
 
@@ -67,6 +73,26 @@
     right: 0;
     color: var(--color-oceania);
     font-size: 24px;
+  }
+
+  .list-section {
+    position: relative;
+  }
+
+  .list-section div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -13px;
+    right: 8px;
+    color: var(--color-light);
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-oceania);
+    border-radius: 100%;
+    border: solid 2px var(--color-light);
   }
 
   .btn-secondary {
