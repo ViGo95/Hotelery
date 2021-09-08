@@ -1,6 +1,6 @@
 <script>
 
-  import { menuStore } from '../stores/store'
+  import { menuStore, moduleStore } from '../stores/store'
 
 	import Menu from './Menu'
 
@@ -13,6 +13,10 @@
 	function toggleMenu() {
 		menuStore.set(!showMenu)
 	}
+
+	function moduleHandler() {
+		moduleStore.set('inbox')
+  }
 </script>
 
 <nav>
@@ -27,7 +31,7 @@
 
 		<img src="images/oceania-logo.svg" width="100" height="100" alt="Oceania">
 		<a href="/">
-			<i class="far fa-comment"></i>
+			<i class="far fa-comment" on:click={moduleHandler}></i>
 		</a>
 	</div>
 </nav>

@@ -16,7 +16,7 @@
     <RoomService />
   {:else if showModule === 'rooms'}
     <Rooms />
-  {:else if showModule === 'rooms'}
+  {:else if showModule === 'inbox'}
     <Inbox />
   {/if}
 

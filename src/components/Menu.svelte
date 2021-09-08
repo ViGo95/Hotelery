@@ -2,7 +2,7 @@
 
 	import { slide } from 'svelte/transition';
 
-  import { menuStore } from '../stores/store'
+  import { menuStore, moduleStore } from '../stores/store'
   import { mock } from '../stores/mock'
 
   let showMenu = false
@@ -14,6 +14,10 @@
     if (showMenu) {
       menuStore.set(false)
     }
+  }
+
+  function moduleHandler(id) {
+		moduleStore.set(id)
   }
 
   let modules = mock.modules
@@ -30,7 +34,7 @@
             {#each Object.values(modules) as module}
 
             <li>
-              <button> { module.title } </button>
+              <button on:click={() => moduleHandler(module.id)}> { module.title } </button>
               <button><i class="fas fa-star"></i></button>
             </li>
 
@@ -40,7 +44,7 @@
               <button>Servicios</button>
             </li>
             <li>
-              <button>Mensajes</button>
+              <button on:click={() => moduleHandler('inbox')}>Mensajes</button>
             </li>
             <li>
               <button>Configuración</button>
